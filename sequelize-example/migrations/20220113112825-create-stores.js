@@ -18,14 +18,11 @@ module.exports = {
         type: Sequelize.STRING,
       },
     });
+
+    return StoresTable;
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.dropTable('Stores');
   }
 };
