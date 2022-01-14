@@ -1,11 +1,13 @@
 const express = require('express');
-
+const bodyParser = require('body-parser');
 const { getAll, findById, create } = require('./src/services/Store');
+const PORT = process.env.PORT || 3000;
 
 require('dotenv').config();
-
 const app = express();
-const PORT = process.env.PORT || 3000;
+app.use(bodyParser.json());
+
+
 
 app.use(express.json());
 
@@ -19,6 +21,5 @@ app.get('/ping', (_req, res) => {
     return res.status(200).json({ message: 'pong!' });
 });
 
-app.use(express.json());
 
 app.listen(PORT, () => console.log(`App listening on port: ${PORT}`));

@@ -1,5 +1,8 @@
 const { Store } = require('../models');
 
+
+
+
 const getAll = async (req, res) => {
     try {
         const Stores = await Store.findAll();
@@ -23,9 +26,10 @@ const findById = async (req, res) => {
 const create = async (req, res) => {
     try {
         const { name, description } = req.body;
+        
         console.log(name, description);
-        const createdStore = await Store.create({ name, description });
-        res.status(201).json({ ...createdStore });
+        const { dataValues } = await Store.create({ name, description });
+        return res.status(201).json(dataValues);
     } catch (err) {
         console.log(err.message);
         res.status(500).json({ message: 'Data not found' }); 
