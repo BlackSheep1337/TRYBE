@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getAll, findById, create } = require('./services/Store');
+const { getAll, findById, create } = require('./src/services/Store');
 
 require('dotenv').config();
 
