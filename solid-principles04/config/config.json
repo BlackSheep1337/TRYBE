@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "alpereira",
-    "database": "database_development",
+    "password": "alpereira0123",
+    "database": "meu_banco",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
